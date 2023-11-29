@@ -1,7 +1,7 @@
 {
   "name": "sneha-veggie-project",
   "version": "0.1.0",
-  "homepage": "https://hsneha2.github.io/sneha-veggie-project",
+  "homepage": "https://github.com/HSneha2/sneha-veggie-project",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
