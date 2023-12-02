@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 // import Logo from '../../../public/assets/icons/logo.svg';
+import theme from '../../themes';
 export const TopNavBar = styled.div`
   display: flex;
-  border: 1px solid grey;
+  box-shadow: 0 2px 34px 0 rgba(0, 0, 0, 0.2);
   align-items: center;
   height: 80px;
   flex-wrap: wrap;
-  :first-child {
-    flex-grow: 4;
-    padding-left: 2%;
-  }
-
+  background-color: white;
+  overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
@@ -29,8 +27,9 @@ export const NavItem = styled.div`
   display: flex;
   height: 40px;
   align-items: center;
-  flex: 1;
+  flex-grow: 1;
   padding-right: 2%;
+  justify-content: space-between;
 `;
 
 const BurgerMenu = styled.div`
@@ -46,6 +45,7 @@ const BurgerMenu = styled.div`
 
 const NavBarContainer = () => {
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+  const { typography } = theme;
 
   const toggleBurgerMenu = () => {
     setShowBurgerMenu(!showBurgerMenu);
@@ -68,8 +68,12 @@ const NavBarContainer = () => {
   return (
     <>
       <TopNavBar>
-        <div>
-          <img src='/assets/icons/logo.svg' alt='logo' />
+        <div style={{ display: 'flex', flexGrow: 24 }}>
+          <img
+            src={process.env.PUBLIC_URL + `/assets/icons/logo.svg`}
+            alt='logo'
+            style={{ paddingLeft: '5%' }}
+          />
         </div>
         {!showBurgerMenu ? (
           <NavItem>
@@ -78,27 +82,30 @@ const NavBarContainer = () => {
                 width: '100px',
                 display: 'flex',
                 justifyContent: 'center',
+                ...typography.variants.caption,
               }}
             >
-              About us
+              ABOUT US
             </div>
             <div
               style={{
                 width: '100px',
                 display: 'flex',
                 justifyContent: 'center',
+                ...typography.variants.caption,
               }}
             >
-              Menu
+              MENU
             </div>
             <div
               style={{
                 width: '100px',
                 display: 'flex',
                 justifyContent: 'center',
+                ...typography.variants.caption,
               }}
             >
-              Contact us
+              CONTACT US
             </div>
           </NavItem>
         ) : (

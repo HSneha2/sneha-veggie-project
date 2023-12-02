@@ -1,4 +1,5 @@
 import './App.css';
+import HeroSection from './components/HeroSection/HeroSection';
 import NavBarContainer from './components/NavBar/NavBarContainer';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         {/* Nav Bar - Logo, about us , menu, contact us , this should be fixed and all other contents scrollable under it*/}
 
         <NavBarContainer />
+        <HeroSection />
       </div>
     </>
   );
